@@ -1,0 +1,48 @@
+body {
+  background-color: #d4f0ff;
+}
+
+a {
+  color: black;
+}
+
+.btn-info {
+  color: black;
+}
+
+a:active {
+  text-decoration: none;
+  color: black;
+}
+.row h1{
+  font-size: 18px;
+  margin-top: -0.2em;
+  padding-bottom: 4em;
+  text-align: center;
+  text-transform: uppercase;
+
+}
+
+.row h3{
+  font-size: 20px;
+  margin-top: 5em;
+  text-align: center;
+
+}
+
+.row {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+}
+
+#Login, #Signup {
+  margin-left: 2em;
+  background-color: #edf9ff;
+  border-color: #edf9ff;
+  text-transform: uppercase;
+}
+
+#Login {
+  margin-bottom: 1em;
+}
