@@ -1,5 +1,5 @@
-body {
-  background-color: #fff;
+.bg-light {
+  background-color: #d4f0ff;
 }
 
 h5 {
@@ -13,7 +13,7 @@ h5 {
 }
 
 .navbar {
-  background-color: #fff;
+  background-color: #d4f0ff;
 }
 
 input {
@@ -22,7 +22,7 @@ input {
 }
 
 input#cc_number {
-  width: 94%;
+  width: 45%;
 }
 
 input#form_name{
@@ -76,8 +76,9 @@ input#alt_phone {
 }
 
 #creditCardType {
-  margin-left: 0.8em;
-  width: 90%;
+  margin-top: -2.6em;
+  margin-left: 11.5em;
+  width: 51%;
 }
 
 #expireMonth {
@@ -113,9 +114,6 @@ li {
   color: black;
 }
 
-.btn-success {
+btn {
   text-transform: uppercase;
-  background-color: #da0000;
-  border-color: #da0000;
-  margin-left: -0.2em;
 }

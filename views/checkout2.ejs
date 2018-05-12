@@ -50,12 +50,12 @@
 
       <!-- Links -->
       <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-              <a class="nav-link" href="/home">Home <span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item">
-              <a class="nav-link" href="/account">Account</a>
-          </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="/home">Search <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/account">Account</a>
+        </li>
       </ul>
       <!-- Links -->
 
@@ -66,31 +66,30 @@
   <!--/.Navbar-->
 
   <h5>Payment</h5>
-  <form id="payment-form" role="form">
+  <form id="payment-form" method="POST" role="form">
 
     <div class="messages"></div>
 
     <div class="controls">
 
-      <div class="row">
-        <div class="col-md-6">
-          <div class="form-group">
-            <input id="cc_number" type="text" name="cc_number" class="form-control" placeholder="Credit Card # *" required="required" data-error="Firstname is required.">
-            <div class="help-block with-errors"></div>
-            <div class="form-row align-items-center">
-              <div class="col-auto my-1">
-                <select class="custom-select mr-sm-2" name="creditCardType" id="creditCardType">
-                  <option selected>Select Card Type *</option>
-                  <option value="VISA">VISA</option>
-                  <option value="MasterCard">MasterCard</option>
-                </select>
-              </div>
-            </div>
+        <div class="form-group">
+          <label class="col-xs-3 control-label">Credit card type</label>
+          <div class="col-xs-3 selectContainer">
+            <select class="form-control" name="cardType">
+              <option value="">Select a type</option>
+              <option value="Master">Master</option>
+              <option value="Visa">Visa</option>
+            </select>
           </div>
         </div>
-      </div>
+
+        <div class="form-group">
+          <label class="col-xs-3 control-label">Credit card number</label>
+          <div class="col-xs-5">
+            <input id="cc_number" type="text" class="form-control" name="cc" />
+          </div>
+        </div>
     </div>
-  </div>
   <div class="row">
     <div class="col-md-6">
       <div class="form-group">
@@ -184,38 +183,41 @@
       <div class="form-group">
         <div class="col-auto my-1">
           <select class="custom-select mr-sm-2" id="state">
-            <option selected>State *<required="required"></option>
-            <option value="VISA">Alabama</option>
-            <option value="MasterCard">Alaska</option>
-            <option value="American Express">Arizona</option>
-            <option value="VISA">Arkansas</option>
-            <option value="MasterCard">California</option>
-            <option value="American Express">Colorado</option>
+            <option selected>State *</option>
+            <option value="Alabama">Alabama</option>
+            <option value="Alaska">Alaska</option>
+            <option value="Arizona">Arizona</option>
+            <option value="Arkansas">Arkansas</option>
+            <option value="California">California</option>
+            <option value="Colorado">Colorado</option>
+            <option value="Connecticut">Alabama</option>
           </select>
         </div>
-        <input id="zip_code" type="zip_code" name="zip_code" class="form-control" placeholder="Zip code *" required="required" data-error="Zip code is required.">
-        <div class="help-block with-errors"></div>
+        <input id="zip_code" type="zip_code" name="zip_code" class="form-control" placeholder="Zip code">
       </div>
     </div>
   </div>
-  <div class="row">
-    <div class="col-md-6">
-      <div class="form-group">
-        <input id="form_phone" type="tel" name="phone" class="form-control" placeholder="Phone *" required="required" data-error="Phone is required.">
-        <div class="help-block with-errors"></div>
-      </div>
+</div>
+</div>
+<div class="row">
+  <div class="col-md-6">
+    <div class="form-group">
+      <input id="form_phone" type="tel" name="phone" class="form-control" placeholder="Phone">
+      <div class="help-block with-errors"></div>
     </div>
   </div>
-  <div class="row">
-    <div class="col-md-6">
-      <div class="form-group">
-        <input id="alt_phone" type="tel" name="alt_phone" class="form-control" placeholder="Alternate phone">
-      </div>
+</div>
+<div class="row">
+  <div class="col-md-6">
+    <div class="form-group">
+      <input id="alt_phone" type="tel" name="alt_phone" class="form-control" placeholder="Alternate phone">
+      <div class="help-block with-errors"></div>
     </div>
   </div>
-  <div class="col-md-12">
-    <a href='/confirm-order'><input type="submit" class="btn btn-success btn-send" value="Place Order"></a>
-  </div>
+</div>
+<div class="col-md-12">
+  <a href='/order-received-print'><input type="submit" class="btn btn-success btn-send" value="Place Order"></a>
+</div>
 </div>
 </form>
 </body>

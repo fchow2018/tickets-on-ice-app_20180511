@@ -10,6 +10,7 @@ var passport = require('passport');
 var session = require('express-session');
 var flash = require('connect-flash');
 var axios = require('axios');
+var ccValidate = require('credit-card-validation');
 // var User = require('models/User');
 TMAPI.setAPIKey("l9XiABE2P5GIQGAhtFcErCCFoA2Ap9R4");
 TMAPI.setSecret("bzE5ahSftAgfRSMe");
@@ -18,8 +19,7 @@ var promise = TMAPI.events.search("NHL");
 
 var ssn, cookies;
 var User = db.User;
-var Tickets = db.Tickets;
-var Price = db.Price;
+// var amount_of_tickets = db.amount_of_tickets;
 
 // var hockey_games = [object Object]
 app.use(express.static('__tickets-on-ice-app' + '/public'));
@@ -90,6 +90,11 @@ console.log('this is user',reg.user);
 app.get('/signup', function(req, res){
   res.render('signup');
 });
+
+app.get('/cart', function(req, res){
+  res.render('cart');
+});
+
 // process the login forms
 // app.post('/login', do all our passport stuff here);
 
@@ -175,10 +180,6 @@ app.get('/order-received-print', function(req,res) {
   res.render('order-received-print');
 });
 
-app.get('/order-received-mobile', function(req,res) {
-  res.render('order-received-mobile');
-});
-
 app.get('/contact-us', function(req,res) {
   res.render('contact-us');
 });
@@ -187,8 +188,25 @@ app.get('/about', function(req,res) {
   res.render('about');
 });
 
+app.get('/confirm-order', function(req,res) {
+  res.render('confirm-order');
+});
+
+const amount_of_tickets = [];
+
 app.get('/checkout', function(req,res) {
   res.render('checkout');
+});
+
+// app.get('/checkout2', function(req,res) {
+//   res.render('checkout2');
+// });
+
+app.post('/checkout', function (req,res) {
+  // console.log(req.method);
+  // console.log(req.path);
+
+  res.redirect('order-received-print');
 });
 
 app.get('/user', function(req, res) {
